@@ -1115,16 +1115,22 @@ Manhattan, Mudslide, Faust 등 다양한 칵테일을 즐길 수 있습니다.
 
 
 <script>
-function showPage(id){
+const link = document.createElement("a");
 
-  document.querySelectorAll(".page").forEach(page=>{
-    page.classList.remove("active");
-  });
+  link.className = "map-button";
 
-  document.getElementById(id).classList.add("active");
+  link.href =
+    "https://map.naver.com/p/search/" +
+    encodeURIComponent("군산 " + name);
 
-  window.scrollTo(0,0);
-}
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  link.textContent = "NAVER MAP · 지도에서 보기";
+
+  place.appendChild(link);
+
+});
 </script>
 
 </body>
