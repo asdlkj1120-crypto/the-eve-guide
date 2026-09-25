@@ -11,12 +11,13 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100%;
 }
 
 body{
-  margin:0;
   background:#f4f2ed;
   color:#222;
   font-family:
@@ -27,112 +28,145 @@ body{
     sans-serif;
 }
 
-.cover{
+.page{
+  display:none;
   min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  max-width:620px;
+  margin:0 auto;
+  padding:38px 24px 70px;
+}
+
+.page.active{
+  display:block;
+}
+
+/* 메인 */
+
+.home{
+  padding-top:70px;
+}
+
+.brand{
   text-align:center;
-  padding:40px 25px;
+  margin-bottom:55px;
 }
 
 .logo{
   font-family:Georgia,serif;
-  font-size:54px;
+  font-size:45px;
   letter-spacing:8px;
   font-weight:400;
-  margin-bottom:18px;
 }
 
-.guide-title{
-  font-size:12px;
+.sub-logo{
+  margin-top:13px;
+  font-size:10px;
   letter-spacing:5px;
-  color:#777;
+  color:#888;
 }
 
 .line{
   width:35px;
   height:1px;
-  background:#777;
-  margin:35px auto;
+  background:#999;
+  margin:30px auto;
 }
 
 .intro{
+  text-align:center;
   font-family:Georgia,"Noto Serif KR",serif;
-  font-size:15px;
+  font-size:14px;
   line-height:2;
-  color:#555;
+  color:#666;
+  margin-bottom:50px;
 }
 
-.scroll{
-  position:absolute;
-  bottom:35px;
-  font-size:11px;
-  letter-spacing:2px;
-  color:#999;
+/* 메인 버튼 */
+
+.menu-button{
+  width:100%;
+  border:1px solid #d4d0c8;
+  background:rgba(255,255,255,.25);
+  padding:22px 20px;
+  margin-bottom:12px;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s;
+  border-radius:0;
 }
 
-.content{
-  max-width:620px;
-  margin:auto;
-  padding:20px 24px 100px;
+.menu-button:active{
+  background:#e8e4dc;
 }
 
-.menu{
-  padding:60px 0 90px;
-}
-
-.menu-title{
-  font-size:11px;
-  letter-spacing:4px;
-  color:#999;
-  margin-bottom:30px;
-}
-
-.menu a{
+.menu-top{
   display:flex;
   align-items:center;
-  gap:18px;
-  padding:19px 0;
-  border-bottom:1px solid #d9d6cf;
-  color:#222;
-  text-decoration:none;
 }
 
 .menu-number{
-  width:28px;
+  width:42px;
   font-family:Georgia,serif;
-  font-size:13px;
+  font-size:12px;
   color:#999;
 }
 
-.menu-name{
-  font-family:Georgia,"Noto Serif KR",serif;
-  font-size:18px;
+.menu-en{
+  font-family:Georgia,serif;
+  font-size:19px;
+  letter-spacing:.5px;
 }
 
-.section{
-  padding:75px 0;
-  border-top:1px solid #d9d6cf;
+.menu-ko{
+  display:block;
+  margin-left:42px;
+  margin-top:7px;
+  font-size:12px;
+  color:#888;
+}
+
+/* 상세 페이지 */
+
+.back{
+  border:0;
+  background:none;
+  padding:0;
+  margin-bottom:60px;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#777;
+  cursor:pointer;
 }
 
 .section-number{
   font-family:Georgia,serif;
   font-size:12px;
   color:#999;
-  margin-bottom:15px;
+  margin-bottom:13px;
 }
 
-.section h2{
+h1{
+  margin:0 0 10px;
   font-family:Georgia,"Noto Serif KR",serif;
+  font-size:31px;
   font-weight:400;
-  font-size:28px;
-  margin:0 0 35px;
+}
+
+.korean-title{
+  font-size:13px;
+  color:#999;
+  margin-bottom:45px;
+}
+
+.divider{
+  width:100%;
+  height:1px;
+  background:#d8d4cc;
+  margin:35px 0;
 }
 
 .info{
-  margin:25px 0;
+  margin-bottom:27px;
 }
 
 .label{
@@ -149,38 +183,21 @@ body{
 
 .text{
   font-size:14px;
-  line-height:2;
+  line-height:2.05;
   color:#555;
 }
 
 .notice{
   margin-top:30px;
-  padding:20px;
-  background:#ebe8e1;
+  padding:22px;
+  background:#e9e5dd;
   font-size:13px;
-  line-height:1.9;
+  line-height:2;
 }
 
-.footer{
-  min-height:65vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-  border-top:1px solid #d9d6cf;
-}
-
-.footer-logo{
-  font-family:Georgia,serif;
-  font-size:35px;
-  letter-spacing:7px;
-}
-
-.footer-sub{
-  margin-top:15px;
-  font-size:10px;
-  letter-spacing:3px;
-  color:#999;
+.important{
+  font-weight:600;
+  color:#222;
 }
 
 .phone{
@@ -188,207 +205,572 @@ body{
   text-decoration:none;
 }
 
+/* 하단 홈 */
+
+.bottom-home{
+  width:100%;
+  margin-top:60px;
+  padding:17px;
+  background:#222;
+  color:white;
+  border:0;
+  font-size:11px;
+  letter-spacing:3px;
+  cursor:pointer;
+}
+
+/* 메인 하단 */
+
+.footer{
+  text-align:center;
+  margin-top:70px;
+  padding-top:45px;
+  border-top:1px solid #d8d4cc;
+}
+
+.footer-logo{
+  font-family:Georgia,serif;
+  font-size:25px;
+  letter-spacing:6px;
+}
+
+.footer-sub{
+  margin-top:12px;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#999;
+}
+
+@media(max-width:480px){
+  .page{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .home{
+    padding-top:55px;
+  }
+
+  .logo{
+    font-size:39px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<section class="cover">
 
-  <div class="logo">THE EVE</div>
+<!-- ======================
+     메인
+====================== -->
 
-  <div class="guide-title">
-    GUEST GUIDE
+<section id="home" class="page home active">
+
+  <div class="brand">
+
+    <div class="logo">
+      THE EVE
+    </div>
+
+    <div class="sub-logo">
+      GUEST GUIDE
+    </div>
+
+    <div class="line"></div>
+
+    <div class="intro">
+      1935년의 시간을 간직한 공간<br>
+      THE EVE에 머물러 주셔서 감사합니다.
+      <br><br>
+      머무시는 동안 필요한 안내를<br>
+      확인해 주세요.
+    </div>
+
   </div>
 
-  <div class="line"></div>
 
-  <div class="intro">
-    1935년의 시간을 간직한 공간<br>
-    THE EVE에 머물러 주셔서 감사합니다.
-  </div>
+  <button class="menu-button" onclick="showPage('stay')">
 
-  <div class="scroll">
-    SCROLL
+    <div class="menu-top">
+      <span class="menu-number">01</span>
+      <span class="menu-en">Stay Information</span>
+    </div>
+
+    <span class="menu-ko">
+      기본 이용 안내
+    </span>
+
+  </button>
+
+
+  <button class="menu-button" onclick="showPage('parking')">
+
+    <div class="menu-top">
+      <span class="menu-number">02</span>
+      <span class="menu-en">Parking</span>
+    </div>
+
+    <span class="menu-ko">
+      주차 안내
+    </span>
+
+  </button>
+
+
+  <button class="menu-button" onclick="showPage('jacuzzi')">
+
+    <div class="menu-top">
+      <span class="menu-number">03</span>
+      <span class="menu-en">Jacuzzi</span>
+    </div>
+
+    <span class="menu-ko">
+      자쿠지 이용 안내
+    </span>
+
+  </button>
+
+
+  <button class="menu-button" onclick="showPage('rules')">
+
+    <div class="menu-top">
+      <span class="menu-number">04</span>
+      <span class="menu-en">House Rules</span>
+    </div>
+
+    <span class="menu-ko">
+      숙소 이용 수칙
+    </span>
+
+  </button>
+
+
+  <button class="menu-button" onclick="showPage('checkout')">
+
+    <div class="menu-top">
+      <span class="menu-number">05</span>
+      <span class="menu-en">Check Out</span>
+    </div>
+
+    <span class="menu-ko">
+      퇴실 안내
+    </span>
+
+  </button>
+
+
+  <div class="footer">
+
+    <div class="footer-logo">
+      THE EVE
+    </div>
+
+    <div class="footer-sub">
+      GUNSAN · 1935
+    </div>
+
   </div>
 
 </section>
 
 
-<main class="content">
 
-<section class="menu">
+<!-- ======================
+     01 기본 이용
+====================== -->
 
-  <div class="menu-title">
-    GUIDE
-  </div>
+<section id="stay" class="page">
 
-  <a href="#stay">
-    <span class="menu-number">01</span>
-    <span class="menu-name">Stay Information</span>
-  </a>
-
-  <a href="#parking">
-    <span class="menu-number">02</span>
-    <span class="menu-name">Parking</span>
-  </a>
-
-  <a href="#jacuzzi">
-    <span class="menu-number">03</span>
-    <span class="menu-name">Jacuzzi</span>
-  </a>
-
-  <a href="#rules">
-    <span class="menu-number">04</span>
-    <span class="menu-name">House Rules</span>
-  </a>
-
-  <a href="#checkout">
-    <span class="menu-number">05</span>
-    <span class="menu-name">Check Out</span>
-  </a>
-
-</section>
-
-
-<section class="section" id="stay">
+  <button class="back" onclick="showPage('home')">
+    ← HOME
+  </button>
 
   <div class="section-number">
     01
   </div>
 
-  <h2>Stay Information</h2>
+  <h1>Stay Information</h1>
 
-  <div class="info">
-    <div class="label">CHECK IN</div>
-    <div class="value">15:00</div>
+  <div class="korean-title">
+    기본 이용 안내
   </div>
 
-  <div class="info">
-    <div class="label">CHECK OUT</div>
-    <div class="value">11:00</div>
-  </div>
 
   <div class="info">
-    <div class="label">ADDRESS</div>
+
+    <div class="label">
+      CHECK IN
+    </div>
+
+    <div class="value">
+      오후 3시 이후
+    </div>
+
+  </div>
+
+
+  <div class="info">
+
+    <div class="label">
+      CHECK OUT
+    </div>
+
+    <div class="value">
+      오전 11시까지
+    </div>
+
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <div class="info">
+
+    <div class="label">
+      ADDRESS
+    </div>
+
     <div class="value">
       전북 군산시 구영1길 116
     </div>
+
   </div>
 
+
   <div class="info">
-    <div class="label">CONTACT</div>
+
+    <div class="label">
+      CONTACT
+    </div>
+
     <div class="value">
+
       <a class="phone" href="tel:01099160776">
         010-9916-0776
       </a>
+
     </div>
+
   </div>
+
+
+  <div class="notice">
+    이용 중 불편한 점이나 궁금한 사항이 있으시면
+    언제든 편하게 연락 주세요.
+  </div>
+
+
+  <button class="bottom-home" onclick="showPage('home')">
+    HOME
+  </button>
 
 </section>
 
 
-<section class="section" id="parking">
+
+<!-- ======================
+     02 주차
+====================== -->
+
+<section id="parking" class="page">
+
+  <button class="back" onclick="showPage('home')">
+    ← HOME
+  </button>
 
   <div class="section-number">
     02
   </div>
 
-  <h2>Parking</h2>
+  <h1>Parking</h1>
+
+  <div class="korean-title">
+    주차 안내
+  </div>
+
 
   <div class="text">
-    숙소 앞 주차 표지판을 치우고
+
+    숙소 앞에 마련된
+    <span class="important">주차 표지판을 치우고</span>
     주차해 주세요.
+
     <br><br>
-    주차가 어려운 경우 연락 주시면
-    안내 도와드리겠습니다.
+
+    숙소 앞 주차가 어려운 경우
+    인근 무료 공영주차장을 이용하실 수 있습니다.
+
+    <br><br>
+
+    주차에 어려움이 있으시면
+    연락 주시면 안내 도와드리겠습니다.
+
   </div>
+
+
+  <div class="notice">
+
+    인근 골목은 주민들이 함께 이용하는 공간입니다.
+    다른 차량 및 주민 통행에 방해되지 않도록
+    주차 부탁드립니다.
+
+  </div>
+
+
+  <button class="bottom-home" onclick="showPage('home')">
+    HOME
+  </button>
 
 </section>
 
 
-<section class="section" id="jacuzzi">
+
+<!-- ======================
+     03 자쿠지
+====================== -->
+
+<section id="jacuzzi" class="page">
+
+  <button class="back" onclick="showPage('home')">
+    ← HOME
+  </button>
 
   <div class="section-number">
     03
   </div>
 
-  <h2>Jacuzzi</h2>
+  <h1>Jacuzzi</h1>
+
+  <div class="korean-title">
+    자쿠지 이용 안내
+  </div>
+
 
   <div class="text">
+
     편안한 휴식을 위해 마련된
     THE EVE의 자쿠지 공간입니다.
+
+    <br><br>
+
+    원하시는 온도로 물을 받아
+    편안하게 이용해 주세요.
+
   </div>
 
+
   <div class="notice">
+
+    <span class="important">
+      자쿠지는 오후 10시 이전까지만 이용 가능합니다.
+    </span>
+
+    <br><br>
+
     인근 주민들의 편안한 휴식을 위해
-    자쿠지는 오후 10시 이전까지만
-    이용해 주세요.
+    오후 10시 이후에는 자쿠지 이용을
+    삼가주시기 바랍니다.
+
   </div>
+
+
+  <div class="text" style="margin-top:30px">
+
+    욕조 안에서는 입욕제, 오일 및
+    색소가 포함된 제품의 사용을 삼가주세요.
+
+    <br><br>
+
+    바닥이 젖어 있을 경우 미끄러울 수 있으니
+    이동 시 주의해 주세요.
+
+  </div>
+
+
+  <button class="bottom-home" onclick="showPage('home')">
+    HOME
+  </button>
 
 </section>
 
 
-<section class="section" id="rules">
+
+<!-- ======================
+     04 이용수칙
+====================== -->
+
+<section id="rules" class="page">
+
+  <button class="back" onclick="showPage('home')">
+    ← HOME
+  </button>
 
   <div class="section-number">
     04
   </div>
 
-  <h2>House Rules</h2>
+  <h1>House Rules</h1>
+
+  <div class="korean-title">
+    숙소 이용 수칙
+  </div>
+
 
   <div class="text">
-    실내 전 구역은 금연입니다.
+
+    <span class="important">
+      실내 전 구역은 금연입니다.
+    </span>
+
     <br><br>
+
     반려동물의 출입은 제한됩니다.
+
     <br><br>
+
+    THE EVE는 주거지역에 위치하고 있습니다.
     늦은 시간에는 큰 소리와
     스피커 사용을 자제해 주세요.
+
     <br><br>
-    냄새와 연기가 많이 발생하는
-    음식의 조리는 제한됩니다.
+
+    생선구이, 고기구이 등
+    냄새와 연기가 많이 발생하는 음식의
+    조리는 제한됩니다.
+
     <br><br>
-    사용하신 식기는 간단히 세척하여
-    정리해 주세요.
+
+    음식 조리 및 섭취 시에는
+    환풍기를 작동해 주세요.
+
+    <br><br>
+
+    사용하신 식기는
+    간단히 세척하여 정리해 주세요.
+
   </div>
+
+
+  <div class="notice">
+
+    THE EVE는 1935년에 지어진 오래된 주택을
+    새롭게 담아낸 공간입니다.
+
+    <br><br>
+
+    화재 예방을 위해 촛불, 버너 등
+    화기를 사용하는 제품은 사용하지 말아주세요.
+
+  </div>
+
+
+  <button class="bottom-home" onclick="showPage('home')">
+    HOME
+  </button>
 
 </section>
 
 
-<section class="section" id="checkout">
+
+<!-- ======================
+     05 퇴실
+====================== -->
+
+<section id="checkout" class="page">
+
+  <button class="back" onclick="showPage('home')">
+    ← HOME
+  </button>
 
   <div class="section-number">
     05
   </div>
 
-  <h2>Check Out</h2>
+  <h1>Check Out</h1>
+
+  <div class="korean-title">
+    퇴실 안내
+  </div>
+
+
+  <div class="info">
+
+    <div class="label">
+      CHECK OUT
+    </div>
+
+    <div class="value">
+      오전 11시까지
+    </div>
+
+  </div>
+
+
+  <div class="divider"></div>
+
 
   <div class="text">
-    퇴실 시간은 오전 11시입니다.
+
+    사용하신 식기는 간단히 정리해 주세요.
+
     <br><br>
+
     퇴실 전 개인 소지품을
     다시 한번 확인해 주세요.
+
     <br><br>
+
     시설 또는 비품의 파손이 발생한 경우
     퇴실 전 연락 부탁드립니다.
+
   </div>
+
+
+  <div class="notice">
+
+    머무시는 동안 THE EVE와 함께해 주셔서
+    감사합니다.
+
+    <br><br>
+
+    군산에서의 시간이
+    좋은 기억으로 남기를 바랍니다.
+
+  </div>
+
+
+  <button class="bottom-home" onclick="showPage('home')">
+    HOME
+  </button>
 
 </section>
 
 
-<section class="footer">
 
-  <div class="footer-logo">
-    THE EVE
-  </div>
+<script>
 
-  <div class="footer-sub">
-    GUNSAN · 1935
-  </div>
+function showPage(id){
 
-</section>
+  document
+    .querySelectorAll(".page")
+    .forEach(page=>{
+      page.classList.remove("active");
+    });
 
-</main>
+  document
+    .getElementById(id)
+    .classList.add("active");
+
+  window.scrollTo({
+    top:0,
+    behavior:"instant"
+  });
+
+}
+
+</script>
 
 </body>
 </html>
