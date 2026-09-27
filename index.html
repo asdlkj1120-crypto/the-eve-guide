@@ -6,29 +6,7 @@
 <title>THE EVE · Guest Guide</title>
 
 <style>
-
-
-.map-button{
-  display:inline-block;
-  margin-top:14px;
-  padding:10px 15px;
-  border:1px solid #c9c5bd;
-  color:#444;
-  text-decoration:none;
-  font-size:11px;
-  letter-spacing:1px;
-  background:rgba(255,255,255,.35);
-}
-
-.map-button:active{
-  background:#e5e1d9;
-}
-
-/* 기존 CSS들 계속... */
-
 *{box-sizing:border-box}
-  
-  *{box-sizing:border-box}
 
 html,body{
   margin:0;
@@ -47,7 +25,7 @@ body{
   min-height:100vh;
   max-width:620px;
   margin:0 auto;
-  padding:38px 22px 80px;
+  padding:38px 22px 100px;
 }
 
 .page.active{display:block}
@@ -87,25 +65,27 @@ body{
   color:#666;
 }
 
-/* 메인 버튼 */
+
+/* MAIN BUTTON */
 
 .menu-button{
   display:block;
   width:100%;
   border:1px solid #d4d0c8;
   background:rgba(255,255,255,.25);
-  padding:21px 15px;
-  margin-bottom:12px;
+  padding:20px 15px;
+  margin-bottom:11px;
   text-align:center;
   cursor:pointer;
-  border-radius:0;
 }
+
+.menu-button:active{background:#e7e3db}
 
 .menu-number{
   display:block;
   font-family:Georgia,serif;
   font-size:10px;
-  color:#999;
+  color:#aaa;
   margin-bottom:7px;
 }
 
@@ -122,11 +102,8 @@ body{
   color:#888;
 }
 
-.menu-button:active{
-  background:#e7e3db;
-}
 
-/* 상세 */
+/* DETAIL */
 
 .back{
   border:0;
@@ -159,9 +136,7 @@ h1{
   margin-bottom:42px;
 }
 
-.info{
-  margin-bottom:26px;
-}
+.info{margin-bottom:27px}
 
 .label{
   font-size:10px;
@@ -205,19 +180,35 @@ h1{
   text-decoration:none;
 }
 
-.bottom-home{
-  width:100%;
-  margin-top:60px;
-  padding:17px;
-  border:0;
-  background:#222;
-  color:white;
-  font-size:11px;
-  letter-spacing:3px;
-  cursor:pointer;
+.rule{
+  padding:25px 0;
+  border-bottom:1px solid #d8d4cc;
 }
 
-/* 맛집 메인 */
+.rule:first-of-type{padding-top:0}
+
+.rule-number{
+  font-family:Georgia,serif;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#aaa;
+  margin-bottom:8px;
+}
+
+.rule-title{
+  font-family:Georgia,serif;
+  font-size:17px;
+  margin-bottom:10px;
+}
+
+.rule-text{
+  font-size:13px;
+  line-height:2;
+  color:#555;
+}
+
+
+/* CATEGORY */
 
 .category-grid{
   display:grid;
@@ -231,11 +222,10 @@ h1{
   background:rgba(255,255,255,.3);
   text-align:center;
   cursor:pointer;
-  padding:15px 8px;
 }
 
 .category-button:last-child:nth-child(odd){
-  grid-column:1 / -1;
+  grid-column:1/-1;
 }
 
 .category-en{
@@ -250,22 +240,20 @@ h1{
   color:#888;
 }
 
-/* 맛집 카드 */
+
+/* PLACES */
 
 .place{
   padding:27px 0;
   border-bottom:1px solid #d8d4cc;
 }
 
-.place:first-of-type{
-  padding-top:0;
-}
+.place:first-of-type{padding-top:0}
 
 .place-name{
   font-family:Georgia,"Noto Serif KR",serif;
   font-size:21px;
   margin-bottom:10px;
-  color:#222;
 }
 
 .place-desc{
@@ -285,6 +273,68 @@ h1{
   margin-top:5px;
   color:#555;
 }
+
+.map-button{
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 15px;
+  border:1px solid #c9c5bd;
+  color:#444;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:1px;
+  background:rgba(255,255,255,.35);
+}
+
+
+/* BUTTONS */
+
+.bottom-home{
+  width:100%;
+  margin-top:60px;
+  padding:17px;
+  border:0;
+  background:#222;
+  color:#fff;
+  font-size:11px;
+  letter-spacing:3px;
+  cursor:pointer;
+}
+
+.call-button{
+  display:block;
+  width:100%;
+  padding:18px;
+  margin-top:25px;
+  background:#222;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+
+/* FIXED CONTACT */
+
+.quick-contact{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:100;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:0;
+  background:#222;
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,.18);
+}
+
+
+/* FOOTER */
 
 .footer{
   text-align:center;
@@ -316,12 +366,11 @@ h1{
 <body>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="page home active">
 
 <div class="brand">
-
   <div class="logo">THE EVE</div>
   <div class="sub-logo">GUEST GUIDE</div>
 
@@ -333,57 +382,62 @@ h1{
     머무시는 동안 필요한 안내를<br>
     확인해 주세요.
   </div>
-
 </div>
 
 
 <button class="menu-button" onclick="showPage('stay')">
-  <span class="menu-number">01</span>
-  <span class="menu-en">Stay Information</span>
-  <span class="menu-ko">기본 이용 안내</span>
+<span class="menu-number">01</span>
+<span class="menu-en">Stay Information</span>
+<span class="menu-ko">기본 이용 안내</span>
 </button>
 
 <button class="menu-button" onclick="showPage('parking')">
-  <span class="menu-number">02</span>
-  <span class="menu-en">Parking</span>
-  <span class="menu-ko">주차 안내</span>
+<span class="menu-number">02</span>
+<span class="menu-en">Parking</span>
+<span class="menu-ko">주차 안내</span>
 </button>
 
-<button class="menu-button" onclick="showPage('Private Bath')">
-  <span class="menu-number">03</span>
-  <span class="menu-en">Private Bath</span>
-  <span class="menu-ko">프라이빗 탕 이용 안내</span>
+<button class="menu-button" onclick="showPage('bath')">
+<span class="menu-number">03</span>
+<span class="menu-en">Jacuzzi</span>
+<span class="menu-ko">탕 이용 안내</span>
 </button>
 
 <button class="menu-button" onclick="showPage('rules')">
-  <span class="menu-number">04</span>
-  <span class="menu-en">House Rules</span>
-  <span class="menu-ko">숙소 이용 수칙</span>
+<span class="menu-number">04</span>
+<span class="menu-en">House Rules</span>
+<span class="menu-ko">숙소 이용 수칙</span>
 </button>
 
 <button class="menu-button" onclick="showPage('checkout')">
-  <span class="menu-number">05</span>
-  <span class="menu-en">Check Out</span>
-  <span class="menu-ko">퇴실 안내</span>
+<span class="menu-number">05</span>
+<span class="menu-en">Check Out</span>
+<span class="menu-ko">퇴실 안내</span>
 </button>
 
 <button class="menu-button" onclick="showPage('local')">
-  <span class="menu-number">06</span>
-  <span class="menu-en">Local Guide</span>
-  <span class="menu-ko">군산 맛집 안내</span>
+<span class="menu-number">06</span>
+<span class="menu-en">Local Guide</span>
+<span class="menu-ko">군산 맛집 안내</span>
+</button>
+
+<button class="menu-button" onclick="showPage('contact')">
+<span class="menu-number">07</span>
+<span class="menu-en">Contact</span>
+<span class="menu-ko">문의 및 긴급 연락</span>
 </button>
 
 
 <div class="footer">
-  <div class="footer-logo">THE EVE</div>
-  <div class="footer-sub">GUNSAN · 1935</div>
+<div class="footer-logo">THE EVE</div>
+<div class="footer-sub">GUNSAN · 1935</div>
 </div>
 
 </section>
 
 
 
-<!-- 01 STAY -->
+<!-- ================= STAY ================= -->
 
 <section id="stay" class="page">
 
@@ -394,32 +448,43 @@ h1{
 <div class="korean-title">기본 이용 안내</div>
 
 <div class="info">
-  <div class="label">CHECK IN</div>
-  <div class="value">오후 3시 이후</div>
+<div class="label">CHECK IN</div>
+<div class="value">15:00 이후</div>
 </div>
 
 <div class="info">
-  <div class="label">CHECK OUT</div>
-  <div class="value">오전 11시까지</div>
+<div class="label">CHECK OUT</div>
+<div class="value">11:00까지</div>
 </div>
 
 <div class="divider"></div>
 
 <div class="info">
-  <div class="label">ADDRESS</div>
-  <div class="value">전북 군산시 구영1길 116</div>
+<div class="label">ADDRESS</div>
+<div class="value">전북 군산시 구영1길 116</div>
 </div>
 
 <div class="info">
-  <div class="label">CONTACT</div>
-  <div class="value">
-    <a class="phone" href="tel:01099160776">010-9916-0776</a>
-  </div>
+<div class="label">CONTACT</div>
+<div class="value">
+<a class="phone" href="tel:01099160776">010-9916-0776</a>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="text">
+THE EVE는 비대면 체크인으로 운영됩니다.<br>
+출입 비밀번호는 체크인 안내 문자를 확인해 주세요.
+
+<br><br>
+
+예약 인원 외 방문객의 출입은 제한됩니다.
 </div>
 
 <div class="notice">
-  이용 중 불편한 점이나 궁금한 사항이 있으시면
-  언제든 편하게 연락 주세요.
+이용 중 불편한 점이나 궁금한 사항이 있으시면
+언제든 편하게 연락 주세요.
 </div>
 
 <button class="bottom-home" onclick="showPage('home')">HOME</button>
@@ -428,7 +493,7 @@ h1{
 
 
 
-<!-- 02 PARKING -->
+<!-- ================= PARKING ================= -->
 
 <section id="parking" class="page">
 
@@ -442,24 +507,33 @@ h1{
 
 숙소 앞에 마련된
 <span class="important">주차 표지판을 치우고</span>
-주차해 주세요.
+해당 공간에 주차해 주세요.
 
 <br><br>
 
 숙소 앞 주차가 어려운 경우
-인근 무료 공영주차장을 이용하실 수 있습니다.
-
-<br><br>
-
-주차에 어려움이 있으시면
-연락 주시면 안내 도와드리겠습니다.
+약 120m 거리에 무료 공영주차장이 있습니다.
 
 </div>
 
 <div class="notice">
-  인근 골목은 주민들이 함께 이용하는 공간입니다.<br>
-  다른 차량 및 주민 통행에 방해되지 않도록
-  주차 부탁드립니다.
+<span class="important">무료 공영주차장</span><br>
+전북 군산시 금동 26-8<br>
+신흥교회 옆
+</div>
+
+<div class="text" style="margin-top:30px">
+
+공영주차장에도 자리가 없는 경우
+010-9916-0776으로 연락 주시면
+주차 안내를 도와드리겠습니다.
+
+<br><br>
+
+인근 골목은 주민들이 함께 이용하는 공간입니다.
+다른 차량 및 주민 통행에 방해되지 않도록
+주차 부탁드립니다.
+
 </div>
 
 <button class="bottom-home" onclick="showPage('home')">HOME</button>
@@ -468,47 +542,60 @@ h1{
 
 
 
-<!-- 03 Private Bath -->
+<!-- ================= BATH ================= -->
 
-<section id="Private Bath" class="page">
+<section id="bath" class="page">
 
 <button class="back" onclick="showPage('home')">← HOME</button>
 
 <div class="section-number">03</div>
-<h1>Private Bath</h1>
-<div class="korean-title">자쿠지 이용 안내</div>
+<h1>Jacuzzi</h1>
+<div class="korean-title">탕 이용 안내</div>
 
 <div class="text">
-편안한 휴식을 위해 마련된
-THE EVE의 프라이빗 탕 공간입니다.
+
+THE EVE의 탕은 따뜻한 물에 몸을 담그며
+천천히 쉬어갈 수 있도록 마련된 공간입니다.
 
 <br><br>
 
-원하시는 온도로 물을 받아
-편안하게 이용해 주세요.
+물을 받는 데 약 90분 정도 소요됩니다.
+
+<br><br>
+
+탕 이용 시 침실과 탕 공간 사이의 문을
+닫고 이용해 주세요.
+
+<br><br>
+
+습기가 많이 발생할 수 있으니
+필요한 경우 에어컨 제습모드를 이용해 주세요.
+
 </div>
 
 <div class="notice">
 
 <span class="important">
-자쿠지는 오후 10시 이전까지만 이용 가능합니다.
+탕 이용은 오후 10시 이전까지 부탁드립니다.
 </span>
 
 <br><br>
 
-인근 주민들의 편안한 휴식을 위해
-오후 10시 이후에는 자쿠지 이용을 삼가주시기 바랍니다.
+늦은 시간에는 인근 주민들을 위해
+대화 및 물 사용 소음을 최소화해 주세요.
 
 </div>
 
 <div class="text" style="margin-top:30px">
-욕조 안에서는 입욕제, 오일 및
-색소가 포함된 제품의 사용을 삼가주세요.
+
+욕조 안에서는 오일 및
+색소,펄이 포함된 입욕제 제품의 사용을 삼가주세요.
 
 <br><br>
 
 바닥이 젖어 있을 경우 미끄러울 수 있으니
 이동 시 주의해 주세요.
+
 </div>
 
 <button class="bottom-home" onclick="showPage('home')">HOME</button>
@@ -517,7 +604,7 @@ THE EVE의 프라이빗 탕 공간입니다.
 
 
 
-<!-- 04 RULES -->
+<!-- ================= RULES ================= -->
 
 <section id="rules" class="page">
 
@@ -527,23 +614,55 @@ THE EVE의 프라이빗 탕 공간입니다.
 <h1>House Rules</h1>
 <div class="korean-title">숙소 이용 수칙</div>
 
-<div class="text">
 
-<span class="important">실내 전 구역은 금연입니다.</span>
+<div class="rule">
+<div class="rule-number">01</div>
+<div class="rule-title">No Smoking</div>
+<div class="rule-text">
+실내 전 구역은 금연입니다.
+</div>
+</div>
 
-<br><br>
 
+<div class="rule">
+<div class="rule-number">02</div>
+<div class="rule-title">Guests</div>
+<div class="rule-text">
+예약된 인원 외 방문객의 출입은 제한됩니다.<br>
+예약 인원을 초과하여 이용할 경우
+퇴실 조치될 수 있습니다.
+</div>
+</div>
+
+
+<div class="rule">
+<div class="rule-number">03</div>
+<div class="rule-title">Pets</div>
+<div class="rule-text">
 반려동물의 출입은 제한됩니다.
+</div>
+</div>
 
-<br><br>
 
-THE EVE는 주거지역에 위치하고 있습니다.
-늦은 시간에는 큰 소리와 스피커 사용을 자제해 주세요.
+<div class="rule">
+<div class="rule-number">04</div>
+<div class="rule-title">Noise</div>
+<div class="rule-text">
+THE EVE는 주거지역에 위치하고 있습니다.<br><br>
+늦은 시간에는 큰 대화 소리,
+음악 및 스피커 사용을 자제해 주세요.<br><br>
+특히 오후 10시 이후에는
+조용한 이용을 부탁드립니다.
+</div>
+</div>
 
-<br><br>
 
-생선구이, 고기구이 등
-냄새와 연기가 많이 발생하는 음식의 조리는 제한됩니다.
+<div class="rule">
+<div class="rule-number">05</div>
+<div class="rule-title">Food</div>
+<div class="rule-text">
+생선구이, 고기구이 등 냄새와 연기가
+많이 발생하는 음식의 조리는 제한됩니다.
 
 <br><br>
 
@@ -552,18 +671,40 @@ THE EVE는 주거지역에 위치하고 있습니다.
 
 <br><br>
 
-사용하신 식기는 간단히 세척하여 정리해 주세요.
-
-</div>
-
-<div class="notice">
-THE EVE는 1935년에 지어진 오래된 주택을
-새롭게 담아낸 공간입니다.
+침구 위에서는 음식물을 섭취하지 말아주세요.
 
 <br><br>
 
-화재 예방을 위해 촛불, 버너 등
-화기를 사용하는 제품은 사용하지 말아주세요.
+심한 오염 또는 시설·침구의 훼손이 발생한 경우
+세탁 및 교체 비용이 청구될 수 있습니다.
+</div>
+</div>
+
+
+<div class="rule">
+<div class="rule-number">06</div>
+<div class="rule-title">Fire</div>
+<div class="rule-text">
+촛불, 버너 등 화기를 사용하는 제품은
+숙소 내부에서 사용하지 말아주세요.
+</div>
+</div>
+
+
+<div class="rule">
+<div class="rule-number">07</div>
+<div class="rule-title">Facilities</div>
+<div class="rule-text">
+시설 또는 비품의 파손이 발생한 경우
+바로 연락 부탁드립니다.
+</div>
+</div>
+
+
+<div class="notice">
+THE EVE는 오래된 주택의 모습을 간직하면서
+새롭게 정비한 공간입니다.<br><br>
+공간과 비품을 소중하게 이용해 주시면 감사하겠습니다.
 </div>
 
 <button class="bottom-home" onclick="showPage('home')">HOME</button>
@@ -572,7 +713,7 @@ THE EVE는 1935년에 지어진 오래된 주택을
 
 
 
-<!-- 05 CHECKOUT -->
+<!-- ================= CHECKOUT ================= -->
 
 <section id="checkout" class="page">
 
@@ -583,31 +724,61 @@ THE EVE는 1935년에 지어진 오래된 주택을
 <div class="korean-title">퇴실 안내</div>
 
 <div class="info">
-  <div class="label">CHECK OUT</div>
-  <div class="value">오전 11시까지</div>
+<div class="label">CHECK OUT</div>
+<div class="value">11:00까지</div>
 </div>
 
 <div class="divider"></div>
 
 <div class="text">
-사용하신 식기는 간단히 정리해 주세요.
+
+✓ 사용하신 식기는 간단히 세척하여 정리해 주세요.
 
 <br><br>
 
-퇴실 전 개인 소지품을 다시 한번 확인해 주세요.
+✓ 쓰레기는 분리하여 한곳에 모아주세요.
 
 <br><br>
 
-시설 또는 비품의 파손이 발생한 경우
+✓ 음식물쓰레기는 지정된 장소에 정리해 주세요.
+
+<br><br>
+
+✓ 냉·난방기 및 사용하신 전기제품을 확인해 주세요.
+
+<br><br>
+
+✓ 개인 소지품을 다시 한번 확인해 주세요.
+
+<br><br>
+
+✓ 시설 또는 비품의 파손이 있는 경우
 퇴실 전 연락 부탁드립니다.
+
 </div>
 
 <div class="notice">
+
+<span class="important">LOST & FOUND</span>
+
+<br><br>
+
+퇴실 후 발견된 분실물은
+7일간 보관 후 폐기될 수 있습니다.
+
+<br><br>
+
+귀중품은 반드시 직접 보관해 주세요.
+
+</div>
+
+<div class="text" style="margin-top:40px;text-align:center">
 머무시는 동안 THE EVE와 함께해 주셔서 감사합니다.
 
 <br><br>
 
-군산에서의 시간이 좋은 기억으로 남기를 바랍니다.
+군산에서의 시간이<br>
+좋은 기억으로 남기를 바랍니다.
 </div>
 
 <button class="bottom-home" onclick="showPage('home')">HOME</button>
@@ -616,7 +787,7 @@ THE EVE는 1935년에 지어진 오래된 주택을
 
 
 
-<!-- 06 LOCAL GUIDE -->
+<!-- ================= LOCAL GUIDE ================= -->
 
 <section id="local" class="page">
 
@@ -631,32 +802,31 @@ THE EVE 주변에서 즐길 수 있는
 카페와 음식점을 소개합니다.
 </div>
 
-
 <div class="category-grid">
 
 <button class="category-button" onclick="showPage('cafe')">
-  <span class="category-en">CAFE</span>
-  <span class="category-ko">카페</span>
+<span class="category-en">CAFE</span>
+<span class="category-ko">카페</span>
 </button>
 
 <button class="category-button" onclick="showPage('restaurant')">
-  <span class="category-en">RESTAURANT</span>
-  <span class="category-ko">식당</span>
+<span class="category-en">RESTAURANT</span>
+<span class="category-ko">식당</span>
 </button>
 
 <button class="category-button" onclick="showPage('chinese')">
-  <span class="category-en">CHINESE</span>
-  <span class="category-ko">중식당</span>
+<span class="category-en">CHINESE</span>
+<span class="category-ko">중식당</span>
 </button>
 
 <button class="category-button" onclick="showPage('pub')">
-  <span class="category-en">PUB</span>
-  <span class="category-ko">요리주점</span>
+<span class="category-en">PUB</span>
+<span class="category-ko">요리주점</span>
 </button>
 
 <button class="category-button" onclick="showPage('bar')">
-  <span class="category-en">BAR</span>
-  <span class="category-ko">칵테일 · 위스키</span>
+<span class="category-en">BAR</span>
+<span class="category-ko">칵테일 · 위스키</span>
 </button>
 
 </div>
@@ -667,7 +837,7 @@ THE EVE 주변에서 즐길 수 있는
 
 
 
-<!-- CAFE -->
+<!-- ================= CAFE ================= -->
 
 <section id="cafe" class="page">
 
@@ -676,92 +846,48 @@ THE EVE 주변에서 즐길 수 있는
 <h1>Cafe</h1>
 <div class="korean-title">카페</div>
 
-
 <div class="place">
 <div class="place-name">틈</div>
-<div class="place-desc">
-군산의 일본식 가옥을 개조한 감성적인 카페로,
-아인슈페너가 인기 메뉴입니다.
+<div class="place-desc">일본식 가옥을 개조한 감성적인 카페로 아인슈페너가 인기 메뉴입니다.</div>
+<div class="place-info">연중무휴 · 10:00 - 21:00<div class="distance">도보 약 8분</div></div>
 </div>
-<div class="place-info">
-연중무휴 · 10:00 - 21:00
-<div class="distance">도보 약 8분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">첼로네시아</div>
-<div class="place-desc">
-일제강점기 건물을 리모델링한 대형 카페로,
-사계절 아름다운 정원과 넓은 실내 공간이 특징입니다.
+<div class="place-desc">넓은 실내 공간과 정원을 갖춘 대형 카페입니다.</div>
+<div class="place-info">월요일 휴무 · 10:00 - 19:00 · 노키즈존<div class="distance">도보 약 4분</div></div>
 </div>
-<div class="place-info">
-월요일 휴무 · 10:00 - 19:00 · 노키즈존
-<div class="distance">도보 약 4분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">군산과자조합</div>
-<div class="place-desc">
-계란찜과자와 옥수수 계란찜과자 등 구움과자가 인기이며,
-스페셜 밀크티와 와인아메리카노도 즐길 수 있습니다.
+<div class="place-desc">계란찜과자와 옥수수 계란찜과자 등 구움과자가 인기입니다.</div>
+<div class="place-info">평일 10:00 - 22:00<br>토·일 09:30 - 22:00<div class="distance">도보 약 3분</div></div>
 </div>
-<div class="place-info">
-평일 10:00 - 22:00<br>
-토·일 09:30 - 22:00
-<div class="distance">도보 약 3분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">카페 신민회</div>
-<div class="place-desc">
-두바이 초코 수건케익과 바스크치즈케이크가
-인기 메뉴입니다.
+<div class="place-desc">두바이 초코 수건케익과 바스크치즈케이크가 인기 메뉴입니다.</div>
+<div class="place-info">연중무휴 · 11:00 - 23:30<div class="distance">도보 약 4분</div></div>
 </div>
-<div class="place-info">
-연중무휴 · 11:00 - 23:30
-<div class="distance">도보 약 4분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">둔율담</div>
-<div class="place-desc">
-고즈넉한 한옥 분위기에서 전통 다과 상차림과
-팥빙수, 두바이 찹쌀떡 등을 즐길 수 있습니다.
+<div class="place-desc">한옥 분위기에서 전통 다과와 팥빙수 등을 즐길 수 있습니다.</div>
+<div class="place-info">월요일 휴무 · 11:00 - 23:00<div class="distance">차량 약 4분</div></div>
 </div>
-<div class="place-info">
-월요일 휴무 · 11:00 - 23:00
-<div class="distance">차량 약 4분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">이성당</div>
-<div class="place-desc">
-군산의 오랜 역사를 자랑하는 빵집으로
-단팥빵과 야채빵이 인기 메뉴입니다.
-</div>
-<div class="place-info">
-연중무휴 · 08:00 - 21:30
-<div class="distance">도보 약 6분</div>
-</div>
+<div class="place-desc">군산의 오랜 역사를 자랑하는 빵집으로 단팥빵과 야채빵이 인기입니다.</div>
+<div class="place-info">연중무휴 · 08:00 - 21:30<div class="distance">도보 약 6분</div></div>
 </div>
 
 <button class="bottom-home" onclick="showPage('local')">LOCAL GUIDE</button>
-
 </section>
 
 
 
-<!-- RESTAURANT -->
+<!-- ================= RESTAURANT ================= -->
 
 <section id="restaurant" class="page">
 
@@ -770,150 +896,78 @@ THE EVE 주변에서 즐길 수 있는
 <h1>Restaurant</h1>
 <div class="korean-title">식당</div>
 
-
 <div class="place">
 <div class="place-name">뽀빠이 감자탕</div>
-<div class="place-desc">군산에서 50년 전통을 자랑하는 감자탕 전문점입니다.</div>
-<div class="place-info">
-월·화 휴무 · 11:00 - 21:00<br>
-브레이크타임 15:00 - 17:00
-<div class="distance">도보 약 6분</div>
+<div class="place-desc">50년 전통의 감자탕 전문점입니다.</div>
+<div class="place-info">월·화 휴무 · 11:00 - 21:00<br>브레이크타임 15:00 - 17:00<div class="distance">도보 약 6분</div></div>
 </div>
-</div>
-
 
 <div class="place">
 <div class="place-name">한일옥</div>
-<div class="place-desc">
-소고기무국과 육회비빔밥으로 유명한 식당입니다.
+<div class="place-desc">소고기무국과 육회비빔밥으로 유명한 식당입니다.</div>
+<div class="place-info">연중무휴 · 06:00 - 21:30<br>라스트오더 20:40<div class="distance">도보 약 2분</div></div>
 </div>
-<div class="place-info">
-연중무휴 · 06:00 - 21:30<br>
-라스트오더 20:40
-<div class="distance">도보 약 2분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">일흥옥</div>
-<div class="place-desc">
-50년 전통의 콩나물국밥 전문점입니다.
+<div class="place-desc">50년 전통의 콩나물국밥 전문점입니다.</div>
+<div class="place-info">수요일 휴무 · 05:00 - 15:00<br>라스트오더 14:30<div class="distance">도보 약 4분</div></div>
 </div>
-<div class="place-info">
-수요일 휴무 · 05:00 - 15:00<br>
-라스트오더 14:30
-<div class="distance">도보 약 4분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">성원식당</div>
-<div class="place-desc">
-정갈한 반찬과 다양한 메뉴가 있는 백반집입니다.
+<div class="place-desc">정갈한 반찬과 다양한 메뉴가 있는 백반집입니다.</div>
+<div class="place-info">일요일 휴무 · 10:00 - 21:00<div class="distance">도보 약 1분</div></div>
 </div>
-<div class="place-info">
-일요일 휴무 · 10:00 - 21:00
-<div class="distance">도보 약 1분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">유정초밥</div>
-<div class="place-desc">
-모듬초밥과 사시미 메뉴가 인기 있는 식당입니다.
+<div class="place-desc">모듬초밥과 사시미 메뉴가 인기입니다.</div>
+<div class="place-info">격주 일요일 휴무 · 12:00 - 21:00<br>브레이크타임 15:00 - 17:00<div class="distance">도보 약 10분</div></div>
 </div>
-<div class="place-info">
-격주 일요일 휴무 · 12:00 - 21:00<br>
-브레이크타임 15:00 - 17:00
-<div class="distance">도보 약 10분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">진갈비</div>
 <div class="place-desc">한우 떡갈비로 유명한 군산 맛집입니다.</div>
-<div class="place-info">
-월요일 휴무 · 11:30 - 21:30<br>
-브레이크타임 14:30 - 16:30
-<div class="distance">도보 약 5분</div>
+<div class="place-info">월요일 휴무 · 11:30 - 21:30<br>브레이크타임 14:30 - 16:30<div class="distance">도보 약 5분</div></div>
 </div>
-</div>
-
 
 <div class="place">
 <div class="place-name">안동집</div>
-<div class="place-desc">
-생삼겹살과 제육볶음 두 가지 메뉴를 제공하는 곳입니다.
+<div class="place-desc">생삼겹살과 제육볶음으로 알려진 식당입니다.</div>
+<div class="place-info">연중무휴 · 11:00 - 24:00<br>브레이크타임 14:00 - 17:00<div class="distance">차량 약 4분</div></div>
 </div>
-<div class="place-info">
-연중무휴 · 11:00 - 24:00<br>
-브레이크타임 14:00 - 17:00
-<div class="distance">차량 약 4분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">순돌이곱창</div>
-<div class="place-desc">
-막창, 곱창, 갈비, 목살 등 다양한 메뉴를 제공합니다.
+<div class="place-desc">막창, 곱창, 갈비, 목살 등 다양한 메뉴를 제공합니다.</div>
+<div class="place-info">일요일 휴무 · 16:00 - 24:00<br>22:30 이후 포장만 가능<div class="distance">도보 약 6분</div></div>
 </div>
-<div class="place-info">
-일요일 휴무 · 16:00 - 24:00<br>
-22:30 이후 포장만 가능
-<div class="distance">도보 약 6분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">스테이블</div>
-<div class="place-desc">
-신선한 재료와 정성스러운 조리법의 메뉴를 선보이는 브런치 카페입니다.
+<div class="place-desc">신선한 재료로 만든 메뉴를 즐길 수 있는 브런치 카페입니다.</div>
+<div class="place-info">연중무휴 · 11:00 - 14:30<br>라스트오더 14:00<div class="distance">도보 약 8분</div></div>
 </div>
-<div class="place-info">
-연중무휴 · 11:00 - 14:30<br>
-라스트오더 14:00
-<div class="distance">도보 약 8분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">불타는 구공탄</div>
-<div class="place-desc">
-생삼겹, 생목살, 생갈비를 연탄불에 구워 즐길 수 있습니다.
+<div class="place-desc">생삼겹, 생목살, 생갈비를 연탄불에 구워 즐길 수 있습니다.</div>
+<div class="place-info">첫째·셋째 일요일 휴무 · 17:00 - 24:00<div class="distance">도보 약 7분</div></div>
 </div>
-<div class="place-info">
-첫째·셋째 일요일 휴무 · 17:00 - 24:00
-<div class="distance">도보 약 7분</div>
-</div>
-</div>
-
 
 <div class="place">
 <div class="place-name">파라디소90</div>
-<div class="place-desc">
-화덕피자와 파스타, 스테이크를 즐길 수 있는 레스토랑입니다.
-</div>
-<div class="place-info">
-월요일 휴무 · 17:30 - 22:30<br>
-라스트오더 21:30
-<div class="distance">도보 약 6분</div>
-</div>
+<div class="place-desc">화덕피자, 파스타, 스테이크를 즐길 수 있는 레스토랑입니다.</div>
+<div class="place-info">월요일 휴무 · 17:30 - 22:30<br>라스트오더 21:30<div class="distance">도보 약 6분</div></div>
 </div>
 
 <button class="bottom-home" onclick="showPage('local')">LOCAL GUIDE</button>
-
 </section>
 
 
 
-<!-- CHINESE -->
+<!-- ================= CHINESE ================= -->
 
 <section id="chinese" class="page">
 
@@ -924,60 +978,34 @@ THE EVE 주변에서 즐길 수 있는
 
 <div class="place">
 <div class="place-name">영동반점</div>
-<div class="place-desc">
-군산의 현지인 맛집으로 알려진 중식당입니다.
-</div>
-<div class="place-info">
-월요일 휴무 · 10:00 - 19:30
-<div class="distance">도보 약 7분</div>
-</div>
+<div class="place-desc">군산의 현지인 맛집으로 알려진 중식당입니다.</div>
+<div class="place-info">월요일 휴무 · 10:00 - 19:30<div class="distance">도보 약 7분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">빈해원</div>
-<div class="place-desc">
-군산의 전통 있는 중화요리 전문점으로
-영화 촬영지로도 알려져 있습니다.
-</div>
-<div class="place-info">
-월요일 휴무 · 10:00 - 21:00<br>
-브레이크타임 17:00 - 18:00
-<div class="distance">도보 약 13분</div>
-</div>
+<div class="place-desc">전통 있는 중화요리 전문점으로 영화 촬영지로도 알려져 있습니다.</div>
+<div class="place-info">월요일 휴무 · 10:00 - 21:00<br>브레이크타임 17:00 - 18:00<div class="distance">도보 약 13분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">국제반점</div>
-<div class="place-desc">
-백짬뽕과 물짜장이 특히 인기 있는 중식당입니다.
-</div>
-<div class="place-info">
-화요일 휴무 · 11:00 - 19:30<br>
-브레이크타임 14:30 - 17:00
-<div class="distance">도보 약 6분</div>
-</div>
+<div class="place-desc">백짬뽕과 물짜장이 특히 인기입니다.</div>
+<div class="place-info">화요일 휴무 · 11:00 - 19:30<br>브레이크타임 14:30 - 17:00<div class="distance">도보 약 6분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">지린성</div>
-<div class="place-desc">
-매콤한 고추 짜장으로 유명한 군산 맛집입니다.
-</div>
-<div class="place-info">
-화요일 휴무<br>
-평일 10:00 - 13:00<br>
-토·일 09:30 - 16:00
-<div class="distance">차량 약 7분</div>
-</div>
+<div class="place-desc">매콤한 고추 짜장으로 유명한 군산 맛집입니다.</div>
+<div class="place-info">화요일 휴무<br>평일 10:00 - 13:00<br>토·일 09:30 - 16:00<div class="distance">차량 약 7분</div></div>
 </div>
 
 <button class="bottom-home" onclick="showPage('local')">LOCAL GUIDE</button>
-
 </section>
 
 
 
-<!-- PUB -->
+<!-- ================= PUB ================= -->
 
 <section id="pub" class="page">
 
@@ -988,72 +1016,46 @@ THE EVE 주변에서 즐길 수 있는
 
 <div class="place">
 <div class="place-name">월명동 휘겔리</div>
-<div class="place-desc">
-다양한 술과 안주를 즐길 수 있는 이자카야입니다.
-</div>
-<div class="place-info">
-화요일 휴무 · 17:30 - 24:00<br>
-라스트오더 23:00
-<div class="distance">도보 약 3분</div>
-</div>
+<div class="place-desc">다양한 술과 안주를 즐길 수 있는 이자카야입니다.</div>
+<div class="place-info">화요일 휴무 · 17:30 - 24:00<br>라스트오더 23:00<div class="distance">도보 약 3분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">주소</div>
-<div class="place-desc">
-사시미 모리아와세와 후토마끼가 인기 있는 일본식 이자카야입니다.
-</div>
-<div class="place-info">
-연중무휴 · 17:00 - 24:00<br>
-라스트오더 23:00
-<div class="distance">도보 약 9분</div>
-</div>
+<div class="place-desc">사시미 모리아와세와 후토마끼가 인기 있는 일본식 이자카야입니다.</div>
+<div class="place-info">연중무휴 · 17:00 - 24:00<br>라스트오더 23:00<div class="distance">도보 약 9분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">구이마루</div>
-<div class="place-desc">
-다양한 꼬치와 백짬뽕, 유린기 등의 안주를 즐길 수 있습니다.
-</div>
-<div class="place-info">
-연중무휴 · 18:00 - 01:00<br>
-라스트오더 24:00
-<div class="distance">도보 약 7분</div>
-</div>
+<div class="place-desc">꼬치와 백짬뽕, 유린기 등의 안주를 즐길 수 있습니다.</div>
+<div class="place-info">연중무휴 · 18:00 - 01:00<br>라스트오더 24:00<div class="distance">도보 약 7분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">중앙로 달곰</div>
-<div class="place-desc">
-한식 안주와 다양한 전통주를 즐길 수 있는 곳입니다.
-</div>
-<div class="place-info">
-화요일 휴무 · 18:00 - 04:00<br>
-라스트오더 02:30
-<div class="distance">도보 약 4분</div>
-</div>
+<div class="place-desc">한식 안주와 다양한 전통주를 즐길 수 있습니다.</div>
+<div class="place-info">화요일 휴무 · 18:00 - 04:00<br>라스트오더 02:30<div class="distance">도보 약 4분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">거북이 식탁</div>
-<div class="place-desc">
-토마토와 후추가 어우러진 닭볶음탕과 로제리탕이 인기입니다.
-</div>
-<div class="place-info">
-연중무휴 · 05:00 - 22:00<br>
-라스트오더 21:00
-<div class="distance">도보 약 8분</div>
-</div>
+<div class="place-desc">토마토와 후추가 어우러진 닭볶음탕과 로제리탕이 인기입니다.</div>
+<div class="place-info">연중무휴 · 05:00 - 22:00<br>라스트오더 21:00<div class="distance">도보 약 8분</div></div>
 </div>
 
+<div class="place">
+<div class="place-name">골뱅이 청춘기지</div>
+<div class="place-desc">골뱅이탕과 골뱅이무침을 즐길 수 있습니다.</div>
+<div class="place-info">월요일 휴무 · 16:30 - 24:00<br>금·토 01:00까지<div class="distance">도보 약 6분</div></div>
+</div>
 
 <button class="bottom-home" onclick="showPage('local')">LOCAL GUIDE</button>
-
 </section>
 
 
 
-<!-- BAR -->
+<!-- ================= BAR ================= -->
 
 <section id="bar" class="page">
 
@@ -1064,94 +1066,133 @@ THE EVE 주변에서 즐길 수 있는
 
 <div class="place">
 <div class="place-name">ingrid</div>
-<div class="place-desc">
-분위기 좋은 칵테일 · 위스키 바입니다.
-</div>
-<div class="place-info">
-일요일 휴무 · 19:00 - 03:00<br>
-라스트오더 02:00
-<div class="distance">도보 약 6분</div>
-</div>
+<div class="place-desc">분위기 좋은 칵테일 · 위스키 바입니다.</div>
+<div class="place-info">일요일 휴무 · 19:00 - 03:00<br>라스트오더 02:00<div class="distance">도보 약 6분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">머지랩</div>
-<div class="place-desc">
-Manhattan, Mudslide, Faust 등 다양한 칵테일을 즐길 수 있습니다.
-</div>
-<div class="place-info">
-월요일 휴무 · 19:00 - 04:00<br>
-라스트오더 02:00
-<div class="distance">도보 약 7분</div>
-</div>
+<div class="place-desc">Manhattan, Mudslide, Faust 등 다양한 칵테일을 즐길 수 있습니다.</div>
+<div class="place-info">월요일 휴무 · 19:00 - 04:00<br>라스트오더 02:00<div class="distance">도보 약 7분</div></div>
 </div>
 
 <div class="place">
 <div class="place-name">무제</div>
-<div class="place-desc">
-분위기 좋은 칵테일 · 위스키 바입니다.
-</div>
-<div class="place-info">
-월요일 휴무 · 19:00 - 02:00
-<div class="distance">도보 약 4분</div>
-</div>
+<div class="place-desc">분위기 좋은 칵테일 · 위스키 바입니다.</div>
+<div class="place-info">월요일 휴무 · 19:00 - 02:00<div class="distance">도보 약 4분</div></div>
 </div>
 
 <button class="bottom-home" onclick="showPage('local')">LOCAL GUIDE</button>
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="page">
+
+<button class="back" onclick="showPage('home')">← HOME</button>
+
+<div class="section-number">07</div>
+<h1>Contact</h1>
+<div class="korean-title">문의 및 긴급 연락</div>
+
+<div class="text">
+이용 중 불편한 점이나
+도움이 필요한 경우 언제든 연락 주세요.
+</div>
+
+<div class="notice">
+<div class="label">THE EVE CONTACT</div>
+<div style="font-size:22px;margin-top:5px">
+010-9916-0776
+</div>
+</div>
+
+<a class="call-button" href="tel:01099160776">
+☎ &nbsp; 전화하기
+</a>
+
+<div class="divider"></div>
+
+<div class="label">EMERGENCY</div>
+
+<div class="text">
+누수, 화재, 시설 고장 등
+긴급한 문제가 발생한 경우에는
+즉시 연락 부탁드립니다.
+</div>
+
+<button class="bottom-home" onclick="showPage('home')">HOME</button>
 
 </section>
 
 
 
+<!-- 모든 화면 전화 버튼 -->
+
+<button class="quick-contact"
+onclick="window.location.href='tel:01099160776'"
+aria-label="전화하기">
+☎
+</button>
 
 
-</body>
-  <script>
-function showPage(id) {
+
+<script>
+
+/* 화면 이동 */
+function showPage(id){
+
   const target = document.getElementById(id);
 
-  if (!target) {
-    console.log("페이지를 찾을 수 없음:", id);
+  if(!target){
+    console.log("페이지 없음:",id);
     return;
   }
 
-  document.querySelectorAll(".page").forEach(function(page) {
+  document.querySelectorAll(".page").forEach(function(page){
     page.classList.remove("active");
   });
 
   target.classList.add("active");
 
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
 
-  document.querySelectorAll(".place").forEach(function(place) {
+/* 모든 맛집에 네이버지도 버튼 자동 생성 */
+document.addEventListener("DOMContentLoaded",function(){
 
-    const nameElement = place.querySelector(".place-name");
+  document.querySelectorAll(".place").forEach(function(place){
 
-    if (!nameElement) return;
+    const nameElement=place.querySelector(".place-name");
 
-    const name = nameElement.textContent.trim();
+    if(!nameElement) return;
+    if(place.querySelector(".map-button")) return;
 
-    /* 이미 버튼이 있으면 중복 생성 방지 */
-    if (place.querySelector(".map-button")) return;
+    const name=nameElement.textContent.trim();
 
-    const link = document.createElement("a");
+    const link=document.createElement("a");
 
-    link.className = "map-button";
-    link.href =
+    link.className="map-button";
+
+    link.href=
       "https://map.naver.com/p/search/" +
-      encodeURIComponent("군산 " + name);
+      encodeURIComponent("군산 "+name);
 
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "NAVER MAP · 지도에서 보기";
+    link.target="_blank";
+    link.rel="noopener noreferrer";
+
+    link.textContent="NAVER MAP · 지도에서 보기";
 
     place.appendChild(link);
 
   });
 
 });
+
 </script>
+
+</body>
 </html>
