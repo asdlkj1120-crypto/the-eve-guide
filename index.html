@@ -1135,10 +1135,9 @@ aria-label="전화하기">
 
 <script>
 
-/* 화면 이동 */
-function showPage(id){
-
-  const target = document.getElementById(id);
+/* 화면 이동 + 휴대폰 뒤로가기 지원 */
+function renderPage(id){
+  const target=document.getElementById(id);
 
   if(!target){
     console.log("페이지 없음:",id);
@@ -1150,9 +1149,37 @@ function showPage(id){
   });
 
   target.classList.add("active");
-
   window.scrollTo(0,0);
 }
+
+function showPage(id){
+  const current=document.querySelector(".page.active");
+  const currentId=current ? current.id : "home";
+
+  if(id===currentId)return;
+
+  /* 가이드 안의 이동을 브라우저 방문기록에 저장 */
+  history.pushState({eveGuidePage:id},"","#"+id);
+  renderPage(id);
+}
+
+/* 휴대폰/브라우저 뒤로가기 */
+window.addEventListener("popstate",function(event){
+  const id=(event.state&&event.state.eveGuidePage)
+    ? event.state.eveGuidePage
+    : (location.hash ? location.hash.substring(1) : "home");
+
+  renderPage(document.getElementById(id) ? id : "home");
+});
+
+/* 처음 접속한 화면을 현재 방문기록에 등록 */
+document.addEventListener("DOMContentLoaded",function(){
+  const initialId=location.hash ? location.hash.substring(1) : "home";
+  const safeId=document.getElementById(initialId) ? initialId : "home";
+
+  history.replaceState({eveGuidePage:safeId},"","#"+safeId);
+  renderPage(safeId);
+});
 
 
 /* 모든 맛집에 네이버지도 버튼 자동 생성 */
