@@ -360,6 +360,13 @@ h1{
   .logo{font-size:39px}
   .page{padding-left:20px;padding-right:20px}
 }
+
+/* WI-FI GUIDE */
+.wifi-qr-wrap{margin:22px auto 30px;max-width:270px;padding:18px;background:#fff;border:1px solid #d8d4cc;text-align:center}
+.wifi-qr{display:block;width:100%;height:auto;image-rendering:auto}
+.wifi-help{text-align:center;color:#777;font-size:12px;line-height:1.9;margin:0 0 12px}
+.wifi-password{overflow-wrap:anywhere;user-select:all}
+
 </style>
 </head>
 
@@ -389,6 +396,13 @@ h1{
 <span class="menu-number">01</span>
 <span class="menu-en">Stay Information</span>
 <span class="menu-ko">기본 이용 안내</span>
+</button>
+
+
+<button class="menu-button" onclick="showPage('wifi')">
+<span class="menu-number">01 · WI-FI</span>
+<span class="menu-en">Wi-Fi</span>
+<span class="menu-ko">무선 인터넷 연결</span>
 </button>
 
 <button class="menu-button" onclick="showPage('parking')">
@@ -492,6 +506,29 @@ THE EVE는 비대면 체크인으로 운영됩니다.<br>
 </section>
 
 
+
+<!-- ================= WI-FI ================= -->
+<section id="wifi" class="page">
+<button class="back" onclick="showPage('home')">← HOME</button>
+<div class="section-number">THE EVE</div>
+<h1>Wi-Fi</h1>
+<div class="korean-title">무선 인터넷 안내</div>
+<div class="info">
+<div class="label">NETWORK · SSID</div>
+<div class="value">U+Net48BC_5G</div>
+</div>
+<div class="info">
+<div class="label">PASSWORD</div>
+<div class="value wifi-password">CB3323G@51</div>
+</div>
+<div class="divider"></div>
+<p class="wifi-help">아래 QR코드를 스캔하면<br>Wi-Fi에 간편하게 연결할 수 있습니다.</p>
+<div class="wifi-qr-wrap">
+<img class="wifi-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhwAAAIcCAIAAAAynOArAAAL1UlEQVR4nO3cQW7rRhQF0Sjw/rfsjGMgRiO/0HqPOmcBEinSLvTkvr6/v/8CgMLf774AAJ5DVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkPl69wX89Hq93n0Jb/P9/f3uS/iX6llU93VyPSffdfNzTtx87tOuedqz2Gja/w0nFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIjNv+OjFt6+bExm2im/tOlWpLqvLUXa/qd37qs6hs/L/hpAJARlQAyIgKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAmZXbXydubuZM23fauHF0c2/qpo3vYXXNntfvpt17xUkFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkBEVADKP3f76ZNV+0c09rpt7UydOrnna5tvNe4f/4qQCQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABnbX8tUu0w3t6Qq07a2bm6anbj5btxki2wXJxUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyDx2++uT94Kq3arqu26q7v3m+1NtiE17FtO20U588v+NipMKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGRWbn9N2wu6qdq2urkPttHG3+fmc9/4N7jxmjdyUgEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAzGvafhF33Ny2urm5tPF9nrZJdXP7a+Pz4ndOKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQ+ejtr5v7RdO+6+au17R3zG7V7576rla8P79zUgEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAzNe7L+D/uLkXNG2/qPqu6nOeel8npu1WTdvsqmx8pief89QNMScVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMi8pu3GVKbt6tzcSjrhvubYuCE2bR/s5vXc3KCb9m6ccFIBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgMy47a+bWzfTtolObNxlqrivP/+cyrS/nWm7XtV3beSkAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgCZcdtflWn7PDa77rj5O2/coKtsvPeN13xi2v9wJxUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyHy9+wJ+mrYFNG1D7OZ3Vfc+bfds2ufYl/tz0+5r2vXc5KQCQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKAJlx218bffLOz8Z7v7nDNm1vqrLxvqp39ebvvJGTCgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkXtN2bKpNoWk7SBt3h6Y9i5u/z7Tvqmy85hMbN+hOTPv/fMJJBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyK7e/pu1obdwUOrFxZ6wy7R2rTNsZe+rf+7RrvslJBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyX+++gHfauIM07buq/aKNG0fTtqQq1ftzcyPrpqdumlWcVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgs3L76+ZG1olqB+nEtK2kaftF0/amnrp7Ns209+eTn6mTCgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkxm1/bdzM2XjNJ6btldlc+l31vKY9d3ZxUgEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAzOupW0nVllT1XSc2Xs/G7zpxc69s2m948z3c+Nz5nZMKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGS+3n0BP93c+bm5gzRtA6qycbvp5Hpu7lZ98t7UzXfjxFN32G5yUgEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAzLjtrxPVHs60nbGb3/XUbaKNv3Nl2r2feOomXnXN096xE04qAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJBZuf11YtpmzrStrWm/j+u5Y9o7X33OyfPa+EynXc8JJxUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyLw2bstUTraATlTbRJWNG1kbd5mmbbWd2Piu3rz3m556X04qAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJD5evcF/LRxA+rEtM2ljbtDG7e2qmuedl/T3ueN1zPtmitOKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQGbf9deKT95ROTNsQq+5r4+9T7Tvd/A2n7U3d3JebtmW3kZMKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGReN7duTlQ7SDc/58TGTaFPfjdOTNvR2vh3cWLj386JaX9fFScVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMh89PbXiWnfddO0HbYTT31/pv3OlZtbWzdNe8duclIBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgMy47S9+d3Mr6al7XJWNe1zTNs2q76pMe14bOakAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQObr3Rfw07R9p5umbQpVO0jVfU3bIrtp2mbXtD23ac9040ZfxUkFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkBEVADLjtr9OTNu6OXFzu+nEze2mm9dcmba1dXOza6Npu143d8+mcVIBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgMzK7a8TN3d1pu0OnZi2SbVxz+2mjXtT1Xdt3Mja+LwqTioAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkHns9hd/rtrjmrYz9smqZ7rxeW3cqdu4ieekAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZ21/LTNtTspX0u2m/z1PfjZPvqu592r7ctHfeSQWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMq9puzHTtpIqG+/r5sZRtWl283NumnbN067nxM3356Zpv7OTCgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkvt59Af/HtO0dfndzT2njPtjGHa1K9dxPfp+N+3Ib/9c5qQCQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJA5vXUTSEA7nNSASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyIgKABlRASAjKgBkRAWAjKgAkBEVADKiAkBGVADIiAoAGVEBICMqAGREBYCMqACQERUAMqICQEZUAMiICgAZUQEgIyoAZEQFgIyoAJARFQAyogJARlQAyPwDAHzEYFOXSyUAAAAASUVORK5CYII=" alt="THE EVE Wi-Fi 자동 연결 QR코드" width="230" height="230">
+</div>
+<div class="notice">QR 연결이 되지 않는 경우, 휴대폰 Wi-Fi 설정에서<br><span class="important">U+Net48BC_5G</span>을 선택하고 위 비밀번호를 입력해 주세요.</div>
+<button class="bottom-home" onclick="showPage('home')">HOME</button>
+</section>
 
 <!-- ================= PARKING ================= -->
 
